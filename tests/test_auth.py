@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 from config.links import Links
 
-def run():
+def test_run():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False) 
         context = browser.new_context()
@@ -19,4 +19,4 @@ def run():
         browser.close()
 
 if __name__ == "__main__":
-    run()
+    test_run()
