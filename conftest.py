@@ -3,10 +3,10 @@ from playwright.sync_api import sync_playwright
 
 
 @pytest.fixture(scope='function', autouse=True)
-def driver(request):
+def page(request):
     with sync_playwright() as pl:
         browser = pl.chromium.launch(
-            headless=True,
+            headless=False,
             args=[
                 '--no-sandbox',
                 '--disable-dev-shm-usage',

@@ -9,6 +9,7 @@ class Links():
 
     HOST = os.getenv('HOST')
     BUSINESS_PAGE = f'{HOST}'
+    print(BUSINESS_PAGE)
     PERSONAL_PAGE = f'{HOST}/personal'
     PRICING_PAGE = f'{HOST}/pricing'
     LOGIN_PAGE = f'{HOST}/login'
