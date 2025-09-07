@@ -82,7 +82,6 @@ class BusinessPageActions:
     
     @allure.step("Test Calculator")
     def calculator_operation(self):
-        # Вложенный шаг для клика кнопки Send
         with allure.step("Click Button Send"):
             self.bp.element_click(self.bp.calculator.button_send)
     
