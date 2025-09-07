@@ -14,7 +14,7 @@ def test_run():
         input()
 
         # Сохраняем состояние в state.json
-        context.storage_state(path="state.json")
+        context.storage_state(path="config/auth.json")
 
         browser.close()
 
