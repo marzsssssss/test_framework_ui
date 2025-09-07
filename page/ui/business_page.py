@@ -4,6 +4,7 @@ from base.base_page import BasePage
 from config.links import Links
 from page.ui.components.pre_auth.header import HeaderPreAuth
 from page.ui.components.pre_auth.footer import FooterPreAuth
+from page.ui.components.pre_auth.calculator import CalculatorPreAuth
 
 class BusinessPage(BasePage):
 
@@ -13,6 +14,7 @@ class BusinessPage(BasePage):
         super().__init__(page)
 
         self.header = HeaderPreAuth(page)
+        self.calculator = CalculatorPreAuth(page)
         
         self.button_open_an_account = self.page.get_by_role("link", name="Open an account")
         self.button_request_the_demo = self.page.get_by_role("button", name="Request the demo")

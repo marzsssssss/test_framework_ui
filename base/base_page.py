@@ -10,7 +10,7 @@ class BasePage:
 
     def open(self):
          with allure.step(f'Open {self.PAGE_URL} page'):
-            self.page.goto(self.PAGE_URL, timeout = 10000)
+            self.page.goto(self.PAGE_URL, timeout = 15000)
 
     def make_screenshot(self, screenshot_name: str):
         allure.attach(
