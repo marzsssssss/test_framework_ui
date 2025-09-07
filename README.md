@@ -5,6 +5,10 @@ Start Auth
 ```sh
 python -m tests.test_auth
 ```
+Test Mark 
+```sh
+pytest -m regression
+```
 
 Start Allure Report
 ```sh

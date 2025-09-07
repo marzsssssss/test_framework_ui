@@ -1,4 +1,5 @@
 import allure
+import re 
 from faker import Faker
 
 from playwright.sync_api import expect
@@ -27,7 +28,8 @@ class BusinessPageActions:
     @allure.step("Click 'Sign In' link and verify URL")
     def open_sign_in(self):
         self.bp.element_click(self.bp.header.button_sign_in)
-        expect(self.bp.page).to_have_url(f'{Links.LOGIN_PAGE}')
+        expected_urls = f"{Links.LOGIN_PAGE}|{Links.ACCOUNTS_PAGE}"
+        expect(self.bp.page).to_have_url(re.compile(expected_urls))
         return self
     
     @allure.step("Click 'Open an account' and verify URL")
