@@ -70,10 +70,10 @@ class NavBarActions:
     @allure.step('Open unovay.com')
     def open_host(self):
         self.navbar.element_click(self.navbar.button_unovay_com)
-        expect(self.navbar.page).to_have_url(f'{Links.HOST}')
+        expect(self.navbar.page).to_have_url(f'{Links.HOST}/')
         return self
     
     @allure.step('Open mailto')
-    def open_mail(self):
+    def open_email(self):
         expect(self.navbar.button_mail_unovay).to_have_attribute('href', 'mailto:team@unovay.com')
         return self

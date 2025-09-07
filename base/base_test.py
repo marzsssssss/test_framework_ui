@@ -8,7 +8,7 @@ from page.actions.post_auth.nav_bar_actions import NavBarActions
 class BaseTest():
 
     business_page_actions: BusinessPageActions
-    nav_bar_actions: NavBarActions
+    navbar_actions: NavBarActions
 
 
     @pytest.fixture(autouse=True)

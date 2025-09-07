@@ -16,7 +16,8 @@ def page(request):
             viewport={
                 'width':1920,
                 'height':1080
-            }
+            },
+            storage_state='config/auth.json'
         )
         page = context.new_page()
         request.cls.page = page

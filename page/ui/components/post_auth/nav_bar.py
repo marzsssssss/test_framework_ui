@@ -16,13 +16,13 @@ class NavBar(BasePage):
         self.button_transaction= self.page.get_by_role('link', name = "Transactions")
 
         self.button_unovay_id = self.page.locator('.unovay-mr_1')
-        self.pop_up_window = self.page.get_by_text('Unovay ID copied to clipboard')
+        self.pop_up_window = self.page.get_by_text('Unovay ID copied to clipboard', exact = True)
 
         self.button_terms = self.page.get_by_role('link', name = 'Terms of Service')
         self.button_privacy = self.page.get_by_role('link', name = 'Privacy Policy')
         self.button_legal= self.page.get_by_role('link', name = 'Legal')
-        self.button_unovay_com = self.page.get_by_role('link', name = 'unovay.com')
-        self.button_mail_unovay = self.page.get_by_role('link', name = 'team@unovay.com')
+        self.button_unovay_com = self.page.get_by_role('link', name = 'unovay.com', exact = True)
+        self.button_mail_unovay = self.page.get_by_role('link', name = 'team@unovay.com', exact = True)
 
     def element_click(self, element):
         element.click()
