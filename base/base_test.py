@@ -1,9 +1,7 @@
 import pytest
 
 from page.actions.pre_auth.business_page_actions import BusinessPageActions
-from page.actions.post_auth.nav_bar_actions import NavBarActions
-
-
+from page.actions.nav_bar_actions import NavBarActions
 
 class BaseTest():
 
@@ -16,4 +14,3 @@ class BaseTest():
         request.cls.page = page
         request.cls.business_page_actions = BusinessPageActions(page)
         request.cls.navbar_actions = NavBarActions(page)
-

@@ -2,7 +2,7 @@ import allure
 
 from playwright.sync_api import expect
 from config.links import Links
-from page.ui.components.post_auth.nav_bar import NavBar
+from page.ui.nav_bar import NavBar
 
 
 class NavBarActions:
@@ -12,31 +12,31 @@ class NavBarActions:
 
     @allure.step('Open Send Money in Nav Bar')
     def open_send_money(self):
-        self.navbar.element_click(self.navbar.button_send_money)
+        self.navbar.button_send_money.click()
         expect(self.navbar.page).to_have_url(f"{Links.SEND_MONEY_TRANSFER_PAGE}")
         return self
     
     @allure.step('Open Accounts in Nav Bar')
     def open_accounts(self):
-        self.navbar.element_click(self.navbar.button_accounts)
+        self.navbar.button_accounts.click()
         expect(self.navbar.page).to_have_url(f'{Links.ACCOUNTS_PAGE}')
         return self
     
     @allure.step('Open Recipients in Nav Bar')
     def open_recipients(self):
-        self.navbar.element_click(self.navbar.button_recipients)
+        self.navbar.button_recipients.click()
         expect(self.navbar.page).to_have_url(f'{Links.RECIPIENTS_PAGE}')
         return self
     
     @allure.step('Open Transactions in Nav Bar')
     def open_transactions(self):
-        self.navbar.element_click(self.navbar.button_transaction)
+        self.navbar.button_transaction.click()
         expect(self.navbar.page).to_have_url(f'{Links.TRANSACTIONS_PAGE}')
         return self
     
     @allure.step('Open Accounts in Nav Bar')
     def copy_id(self):
-        self.navbar.element_click(self.navbar.button_unovay_id)
+        self.navbar.button_unovay_id.click()
         expect(self.navbar.pop_up_window).to_be_visible()
         return self
     
@@ -69,7 +69,7 @@ class NavBarActions:
     
     @allure.step('Open unovay.com')
     def open_host(self):
-        self.navbar.element_click(self.navbar.button_unovay_com)
+        self.navbar.button_unovay_com.click()
         expect(self.navbar.page).to_have_url(f'{Links.HOST}/')
         return self
     

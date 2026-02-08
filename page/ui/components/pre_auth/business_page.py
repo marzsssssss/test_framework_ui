@@ -41,6 +41,3 @@ class BusinessPage(BasePage):
         self.button_terms = self.page.get_by_role("link", name="Terms of Service")
         self.button_refund = self.page.get_by_role("link", name="Refund Policy")
         self.button_complaint = self.page.get_by_role("link", name="Complaint Policy")
-    
-    def element_click(self,element):
-        element.click()

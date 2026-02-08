@@ -3,7 +3,7 @@ import re
 from faker import Faker
 
 from playwright.sync_api import expect
-from page.ui.business_page import BusinessPage
+from page.ui.components.pre_auth.business_page import BusinessPage
 from config.links import Links
 
 fake = Faker()
@@ -15,36 +15,36 @@ class BusinessPageActions:
 
     @allure.step("Click 'Personal' radio button and verify URL")
     def open_radio_personal(self):
-        self.bp.element_click(self.bp.button_radio_personal)
+        self.bp.button_radio_personal.click()
         expect(self.bp.page).to_have_url(f'{Links.PERSONAL_PAGE}')
         return self
 
     @allure.step("Click 'Pricing' link and verify URL")
     def open_pricing(self):
-        self.bp.element_click(self.bp.button_pricing)
+        self.bp.button_pricing.click()
         expect(self.bp.page).to_have_url(f'{Links.PRICING_PAGE}')
         return self
 
     @allure.step("Click 'Sign In' link and verify URL")
     def open_sign_in(self):
-        self.bp.element_click(self.bp.button_sign_in)
+        self.bp.button_sign_in.click()
         expected_urls = f"{Links.LOGIN_PAGE}|{Links.ACCOUNTS_PAGE}"
         expect(self.bp.page).to_have_url(re.compile(expected_urls))
         return self
     
     @allure.step("Click 'Open an account' and verify URL")
     def open_account(self):
-        self.bp.element_click(self.bp.button_open_an_account)
+        self.bp.button_open_an_account.click()
         expect(self.bp.page).to_have_url(f'{Links.BUSINESS_REGISTER}')
         return self
 
     @allure.step("Click 'Request the demo' and verify Calendly iframe is visible")
     def open_requests(self):
-        self.bp.element_click(self.bp.button_request_the_demo)
+        self.bp.button_request_the_demo.click()
         iframe = self.bp.page.frame_locator("iframe[title=\"Calendly Scheduling Page\"]")
-        expect(iframe.locator(".Pl9F4D0kOr1s0KUQ1VhD")).to_be_visible(timeout = 10000)
+        expect(iframe.get_by_role("heading", name="Elisa Igumnova")).to_be_visible(timeout = 10000)
         return self
-
+    
     @allure.step("Click 'Send an e-mail' and verify mailto link")
     def open_send_email(self):
         expect(self.bp.button_send_an_email).to_have_attribute("href", "mailto:team@unovay.com")
@@ -85,16 +85,16 @@ class BusinessPageActions:
     @allure.step("Test Calculator")
     def calculator_operation(self):
         with allure.step("Click Button Send"):
-            self.bp.element_click(self.bp.button_send)
+            self.bp.button_send.click()
     
         with allure.step("Select send option"):
-            self.bp.element_click(self.bp.option_send)
+            self.bp.option_send.click()
     
         with allure.step("Click Button Gets"):
-            self.bp.element_click(self.bp.button_gets)
+            self.bp.button_gets.click()
     
         with allure.step("Select gets option"):
-            self.bp.element_click(self.bp.option_gets)
+            self.bp.option_gets.click()
     
         with allure.step("Fill input with random number digits = 5"):
             self.bp.input_send.fill(f"{fake.random_number(digits=5)}")
