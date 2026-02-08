@@ -41,3 +41,29 @@ class BusinessPage(BasePage):
         self.button_terms = self.page.get_by_role("link", name="Terms of Service")
         self.button_refund = self.page.get_by_role("link", name="Refund Policy")
         self.button_complaint = self.page.get_by_role("link", name="Complaint Policy")
+
+class SignIn(BasePage):
+
+    PAGE_URL = Links.LOGIN_PAGE
+
+    def __init__(self, page):
+        super().__init__(page)
+
+        self.input_phone = self.page.get_by_role("textbox", name="+60 000 000")
+        self.button_send_code = self.page.get_by_role("button", name="Send code")
+
+        #Links
+        self.link_privacy = self.page.get_by_role("link", name="Privacy Policy")
+        self.link_terms = self.page.get_by_role("link", name="Terms of Service")
+
+
+class SignInCode(BasePage):
+    
+    PAGE_URL = Links.LOGIN_PAGE
+    
+    def __init__(self, page):
+        super().__init__(page)
+
+        self.input_code = self.page.get_by_role("textbox", name="Code")
+        self.button_resend_code = self.page.get_by_role("button", name="Resend Code")
+        self.button_submit = self.page.get_by_role("button", name="Submit")

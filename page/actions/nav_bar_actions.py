@@ -2,7 +2,7 @@ import allure
 
 from playwright.sync_api import expect
 from config.links import Links
-from page.ui.nav_bar import NavBar
+from page.locators.locators import NavBar
 
 
 class NavBarActions:

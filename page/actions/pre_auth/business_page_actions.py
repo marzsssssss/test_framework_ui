@@ -3,7 +3,7 @@ import re
 from faker import Faker
 
 from playwright.sync_api import expect
-from page.ui.components.pre_auth.business_page import BusinessPage
+from page.locators.pre_auth.locators import BusinessPage
 from config.links import Links
 
 fake = Faker()

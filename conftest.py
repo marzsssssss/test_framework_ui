@@ -50,7 +50,6 @@ def page(request):
             permissions=['geolocation']
         )
         page = context.new_page()
-        request.cls.page = page
         yield page
         context.close()
         browser.close()

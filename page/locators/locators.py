@@ -24,6 +24,3 @@ class NavBar(BasePage):
         self.button_unovay_com = self.page.get_by_role('link', name = 'unovay.com', exact = True)
         self.button_mail_unovay = self.page.get_by_role('link', name = 'team@unovay.com', exact = True)
 
-
-
-
