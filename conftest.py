@@ -29,7 +29,7 @@ def auth():
         browser.close()
 
 @pytest.fixture(scope='function', autouse=True)
-def page(request):
+def page():
     with sync_playwright() as pl:
         browser = pl.chromium.launch(
             headless=False,
